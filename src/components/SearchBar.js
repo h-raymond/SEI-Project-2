@@ -1,16 +1,18 @@
 import React from 'react'
 import Select from 'react-select'
 import axios from 'axios'
-import { options } from '../lib/TeamNames'
 
 class SearchBar extends React.Component{
 
-  constructor(props){
-    super(props)
-
+  constructor(){
+    super()
     this.state = {
-      clubs: null
+      options: [],
+      selectedOption: '',
+      clearable: true
     }
+
+    this.handleSelect = this.handleSelect.bind(this)
   }
 
   componentDidMount() {
@@ -20,21 +22,30 @@ class SearchBar extends React.Component{
       }
     }
     )
-      .then(res => this.setState({ clubs: res.data }))
+      .then(data => {
+        console.log(data.data.standings[0].table)
+        const options = data.data.standings[0].table.map(team => {
+          return { value: team.team.id, label: team.team.name }
+        })
+        this.setState({ options })
+      })
   }
-
-
-
+  handleSelect(e) {
+    console.log(e)
+    const teams = (e.map(select => select.value))
+    this.setState({ teams })
+  }
   render(){
     return(
 
-      <Select options={options} />
-
-    /* We need to return the options inside the Select component based on all football club names. */
-    /* This can be accessed using {this.state.standings.table.team.id} for the VALUE in the options object & {this.state.standings.table.team.name} for the LABEL */
+      <Select
+        isMulti
+        name="teams"
+        label="teams"
+        options={this.state.options}
+        onChange={this.handleSelect}
+      />
     )
-
-
   }
 }
 
