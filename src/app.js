@@ -5,6 +5,7 @@ import './style.scss'
 import { HashRouter, Route, Link } from 'react-router-dom'
 
 import Home from './components/Home'
+import Navbar from './components/Navbar'
 
 
 class App extends React.Component {
@@ -12,6 +13,7 @@ class App extends React.Component {
     return (
       <HashRouter>
         <main>
+          <Navbar />
           <h1>Hello World!</h1>
           <Route path="/" component={Home} />
         </main>
