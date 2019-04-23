@@ -1,10 +1,9 @@
 import React from 'react'
 import Select from 'react-select'
 import axios from 'axios'
+import { options } from '../lib/TeamNames'
 
 class SearchBar extends React.Component{
-
-
 
   constructor(props){
     super(props)
@@ -24,12 +23,19 @@ class SearchBar extends React.Component{
       .then(res => this.setState({ clubs: res.data }))
   }
 
-render(){
-  return(
-    
-  )
-}
 
+
+  render(){
+    return(
+
+      <Select options={options} />
+
+    /* We need to return the options inside the Select component based on all football club names. */
+    /* This can be accessed using {this.state.standings.table.team.id} for the VALUE in the options object & {this.state.standings.table.team.name} for the LABEL */
+    )
+
+
+  }
 }
 
 export default SearchBar

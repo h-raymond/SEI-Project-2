@@ -1,8 +1,6 @@
 import React from 'react'
-import Select from 'react-select'
 import axios from 'axios'
-
-import SearchBar from './components/SearchBar'
+import SearchBar from './SearchBar'
 
 
 class Versus extends React.Component {
@@ -32,7 +30,7 @@ class Versus extends React.Component {
             <div className="columns">
               <div className="column is-full">
                 {/* Here be search bar (argh )*/}
-                <Select options={options} />
+                <SearchBar/>
               </div>
             </div>
 
