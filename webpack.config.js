@@ -8,6 +8,7 @@ module.exports = {
     path: path.resolve('dist'),
     filename: 'bundle.js'
   },
+  devtool: 'source-maps',
   module: {
     rules: [
       { test: /\.jsx?$/, loader: 'babel-loader', exclude: /node_modules/ },

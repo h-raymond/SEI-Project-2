@@ -3,8 +3,8 @@ import React from 'react'
 
 class Navbar extends React.Component {
 
-render() {
-  return(
+  render() {
+    return(
       <nav className="navbar">
         <div className="container">
           <div className="navbar-brand">
@@ -16,11 +16,9 @@ render() {
           Versus
           </div>
         </div>
-    </nav>
-
-
-  )
-}
+      </nav>
+    )
+  }
 
 }
 
