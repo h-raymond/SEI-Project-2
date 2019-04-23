@@ -4,7 +4,7 @@ class AllTeams extends React.Component {
   constructor() {
     super()
 
-    this.state = { clubs: [] }
+    this.state = { clubs: null }
 
   }
 
@@ -30,10 +30,8 @@ class AllTeams extends React.Component {
 
   render() {
     console.log(this.state.clubs)
-    if(this.state.clubs.length === 0) return null
-    // console.log(this.state.clubs.teams, 'i am this.state.clubs.teams')
+    if(!this.state.clubs) return null
     return (
-      //<body>
       <main>
         <section className="section">
           <div className="container">
@@ -50,7 +48,6 @@ class AllTeams extends React.Component {
           </div>
         </section>
       </main>
-    //  </body>
     )
   }
 }
