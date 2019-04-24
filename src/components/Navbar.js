@@ -9,7 +9,7 @@ class Navbar extends React.Component {
       <nav className="navbar">
         <div className="container">
           <div className="navbar-brand">
-            <Link to="/" className="navbar-item">Home</Link>
+            <Link to="/" className="navbar-item"><img src="../images/Logo-New.png"/></Link>
           </div>
           <div className="navbar-start">
             <Link to="/all-teams" className="navbar-item">All Teams</Link>

@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,700');
+
+$primary: #38003C;
+
+body {
+  color: $primary;
+  font-family: 'Work Sans', sans-serif;
+}
+
+
+.navbar {
+  background-color: $primary;
+  color: white;
+}
+
+.navbar-item {
+  color: white;
+
+}
+
+.navbar-brand:hover {
+  background-color: #00ff85;
+  color: $primary;
+}
+
+img {
+  max-height: 200px;
+
+}
+
+.homeLogo {
+  margin-bottom: 20px;
+}

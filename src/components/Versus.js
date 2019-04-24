@@ -83,21 +83,37 @@ class Versus extends React.Component {
         <section className="section">
           <div className="columns">
             {this.state.teamA &&
-              <div className="column is-half">
-                <h1 className="title is-3">{this.state.teamA.name}</h1>
+              <div className="column is-half has-text-centered">
+                <h1 className="title is-3 has-text-centered">{this.state.teamA.name}</h1>
                 <figure className="image">
                   <img src={this.state.teamA.crestUrl} alt={this.state.teamA.name}/>
                 </figure>
-                <p>Position: {this.state.teamA.position}</p>
+                <h2>Position: {this.state.teamA.position}</h2>
+                <h2>Points: {this.state.teamA.points} </h2>
+                <h2>Games Played: {this.state.teamA.playedGames} </h2>
+                <h2>Won: {this.state.teamA.won} </h2>
+                <h2>Drawn: {this.state.teamA.draw} </h2>
+                <h2>Lost: {this.state.teamA.lost} </h2>
+                <h2>Goals for: {this.state.teamA.goalsFor} </h2>
+                <h2>Goals against: {this.state.teamA.goalsAgainst} </h2>
+                <h2>Goal Difference: {this.state.teamA.goalDifference} </h2>
               </div>
             }
             {this.state.teamB &&
-              <div className="column is-half">
-                <h1 className="title is-3">{this.state.teamB.name}</h1>
+              <div className="column is-half has-text-centered">
+                <h1 className="title is-3 has-text-centered">{this.state.teamB.name}</h1>
                 <figure className="image">
                   <img src={this.state.teamB.crestUrl} alt={this.state.teamB.name}/>
                 </figure>
-                <p>Position: {this.state.teamB.position}</p>
+                <h2>Position: {this.state.teamB.position}</h2>
+                <h2>Points: {this.state.teamB.points} </h2>
+                <h2>Games Played: {this.state.teamB.playedGames} </h2>
+                <h2>Won: {this.state.teamB.won} </h2>
+                <h2>Drawn: {this.state.teamB.draw} </h2>
+                <h2>Lost: {this.state.teamB.lost} </h2>
+                <h2>Goals for: {this.state.teamB.goalsFor} </h2>
+                <h2>Goals against: {this.state.teamB.goalsAgainst} </h2>
+                <h2>Goal Difference: {this.state.teamB.goalDifference} </h2>
               </div>
             }
           </div>
