@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from 'axios'
 
 class AllTeams extends React.Component {
   constructor() {
@@ -13,19 +14,9 @@ class AllTeams extends React.Component {
   }
 
   getTeams(endpoint){
-    const myHeaders = new Headers({
-      'Content-Type': 'application/json',
-      'X-Auth-Token': '2e2cceea83ec48c2af5b1eea48220f6a'
-    })
     // make an AJAX request to get the data to display
-    fetch(`https://cors-anywhere.herokuapp.com/http://api.football-data.org/v2/competitions/2021/${endpoint}`, {
-      method: 'GET',
-      headers: myHeaders
-    })
-      .then(res => res.json())
-      // update state with the data
-      // this will re-render the component
-      .then(data => this.setState({clubs: data}))
+    axios.get(`https://cors-anywhere.herokuapp.com/http://api.football-data.org/v2/competitions/2021/${endpoint}`, { headers: { 'X-Auth-Token': '2e2cceea83ec48c2af5b1eea48220f6a' }})
+      .then(res => this.setState({clubs: res.data}))
   }
 
   render() {
