@@ -23,10 +23,12 @@ body {
   color: $primary;
 }
 
-img {
-  max-height: 200px;
-  max-width: auto;
-
+figure.image {
+  height: 200px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  
 }
 
 .homeLogo {

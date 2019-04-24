@@ -18,14 +18,16 @@ class Versus extends React.Component {
       headers: { 'X-Auth-Token': '2e2cceea83ec48c2af5b1eea48220f6a' }
     })
       .then(data => {
+        //The below is retrieving the team information (i.e. the team name and id) and then deleting that data object from the parent object and returning a new object.
         const teams = data.data.standings[0].table.map(data => {
           const team = data.team
           delete data.team
           return { ...team, ...data }
         })
+        //As `name` is now in the parent object we can sort the teams by name
         teams.sort((a, b) => a.name < b.name ? -1 : a.name > b.name ? 1 : 0)
-        // console.log(options)
-        //
+
+        //returning the values of the `id` and `name` and setting these against the value and label respectively for the purposes of React Select dropdown
         const options = teams.map(team => {
           return { value: team.id, label: team.name }
         })
@@ -85,8 +87,7 @@ class Versus extends React.Component {
             {this.state.teamA &&
               <div className="column is-half has-text-centered">
                 <h1 className="title is-3 has-text-centered">{this.state.teamA.name}</h1>
-                <figure className="image">
-                  <img src={this.state.teamA.crestUrl} alt={this.state.teamA.name}/>
+                <figure className="image" style={{ backgroundImage: `url(${this.state.teamA.crestUrl})` }}>
                 </figure>
                 <h2>Position: {this.state.teamA.position}</h2>
                 <h2>Points: {this.state.teamA.points} </h2>
@@ -102,8 +103,7 @@ class Versus extends React.Component {
             {this.state.teamB &&
               <div className="column is-half has-text-centered">
                 <h1 className="title is-3 has-text-centered">{this.state.teamB.name}</h1>
-                <figure className="image">
-                  <img src={this.state.teamB.crestUrl} alt={this.state.teamB.name}/>
+                <figure className="image" style={{ backgroundImage: `url(${this.state.teamB.crestUrl})` }}>
                 </figure>
                 <h2>Position: {this.state.teamB.position}</h2>
                 <h2>Points: {this.state.teamB.points} </h2>
