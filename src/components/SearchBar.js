@@ -4,7 +4,7 @@ import axios from 'axios'
 
 class SearchBar extends React.Component{
 
-  constructor(){
+  constructor(props){
     super()
     this.state = {
       options: [],
@@ -35,9 +35,9 @@ class SearchBar extends React.Component{
     const teams = (e.map(select => select.value))
     this.setState({ teams })
   }
+
   render(){
     return(
-
       <Select
         isMulti
         name="teams"
@@ -45,7 +45,13 @@ class SearchBar extends React.Component{
         options={this.state.options}
         onChange={this.handleSelect}
       />
+
+
+
+
     )
+
+
   }
 }
 
